@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://zlinni.github.io/2021/11/30/Jquery/</loc>
+    <loc>https://zlinni.github.io/2021/11/30/jQuery/</loc>
     
     <lastmod>2021-11-30</lastmod>
     
@@ -11,7 +11,43 @@
   </url>
   
   <url>
-    <loc>https://zlinni.github.io/2021/11/29/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+    <loc>https://zlinni.github.io/2021/11/30/Echarts/</loc>
+    
+    <lastmod>2021-11-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zlinni.github.io/2021/11/30/JavaWeb/</loc>
+    
+    <lastmod>2021-11-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zlinni.github.io/2021/11/30/JavaScript/</loc>
+    
+    <lastmod>2021-11-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zlinni.github.io/2021/11/30/Node-js/</loc>
+    
+    <lastmod>2021-11-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zlinni.github.io/2021/11/30/Ubuntu-Linux/</loc>
     
     <lastmod>2021-11-30</lastmod>
     
@@ -21,6 +57,24 @@
   
   <url>
     <loc>https://zlinni.github.io/2021/11/30/HTML/</loc>
+    
+    <lastmod>2021-11-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zlinni.github.io/2021/11/30/Ajax/</loc>
+    
+    <lastmod>2021-11-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zlinni.github.io/2021/11/29/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
     
     <lastmod>2021-11-30</lastmod>
     
@@ -101,7 +155,21 @@
 
   
   <url>
+    <loc>https://zlinni.github.io/tags/Ajax-%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2021-11-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://zlinni.github.io/tags/css/</loc>
+    <lastmod>2021-11-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://zlinni.github.io/tags/Echarts/</loc>
     <lastmod>2021-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -115,7 +183,35 @@
   </url>
   
   <url>
-    <loc>https://zlinni.github.io/tags/Jquery/</loc>
+    <loc>https://zlinni.github.io/tags/js-JavaSCript/</loc>
+    <lastmod>2021-11-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://zlinni.github.io/tags/javaweb-%E7%BD%91%E7%BB%9C-http/</loc>
+    <lastmod>2021-11-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://zlinni.github.io/tags/nodejs-%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2021-11-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://zlinni.github.io/tags/linux/</loc>
+    <lastmod>2021-11-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://zlinni.github.io/tags/jQuery/</loc>
     <lastmod>2021-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -131,6 +227,13 @@
 
   
   <url>
+    <loc>https://zlinni.github.io/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/</loc>
+    <lastmod>2021-11-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://zlinni.github.io/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2021-11-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -138,7 +241,7 @@
   </url>
   
   <url>
-    <loc>https://zlinni.github.io/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/</loc>
+    <loc>https://zlinni.github.io/categories/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BF%85%E4%BF%AE/</loc>
     <lastmod>2021-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
