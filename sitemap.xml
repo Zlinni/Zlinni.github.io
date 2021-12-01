@@ -2,9 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://zlinni.github.io/2021/11/30/jQuery/</loc>
+    <loc>https://zlinni.github.io/2021/11/30/Jquery/</loc>
     
-    <lastmod>2021-11-30</lastmod>
+    <lastmod>2021-12-01</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -155,14 +155,14 @@
 
   
   <url>
-    <loc>https://zlinni.github.io/tags/css/</loc>
+    <loc>https://zlinni.github.io/tags/Ajax-%E5%89%8D%E7%AB%AF/</loc>
     <lastmod>2021-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://zlinni.github.io/tags/Ajax-%E5%89%8D%E7%AB%AF/</loc>
+    <loc>https://zlinni.github.io/tags/css/</loc>
     <lastmod>2021-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -176,13 +176,6 @@
   </url>
   
   <url>
-    <loc>https://zlinni.github.io/tags/HTML/</loc>
-    <lastmod>2021-12-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://zlinni.github.io/tags/js-JavaSCript/</loc>
     <lastmod>2021-12-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -190,7 +183,7 @@
   </url>
   
   <url>
-    <loc>https://zlinni.github.io/tags/javaweb-%E7%BD%91%E7%BB%9C-http/</loc>
+    <loc>https://zlinni.github.io/tags/HTML/</loc>
     <lastmod>2021-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -204,14 +197,21 @@
   </url>
   
   <url>
-    <loc>https://zlinni.github.io/tags/linux/</loc>
+    <loc>https://zlinni.github.io/tags/javaweb-%E7%BD%91%E7%BB%9C-http/</loc>
     <lastmod>2021-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://zlinni.github.io/tags/jQuery/</loc>
+    <loc>https://zlinni.github.io/tags/Jquery/</loc>
+    <lastmod>2021-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://zlinni.github.io/tags/linux/</loc>
     <lastmod>2021-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -227,14 +227,14 @@
 
   
   <url>
-    <loc>https://zlinni.github.io/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/</loc>
+    <loc>https://zlinni.github.io/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/</loc>
     <lastmod>2021-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://zlinni.github.io/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/</loc>
+    <loc>https://zlinni.github.io/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2021-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
