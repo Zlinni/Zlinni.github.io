@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zlinni.github.io/2021/12/06/ES6-11/</loc>
+    
+    <lastmod>2021-12-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zlinni.github.io/2021/12/06/Vue/</loc>
+    
+    <lastmod>2021-12-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://zlinni.github.io/2021/11/30/Node-js/</loc>
     
     <lastmod>2021-12-06</lastmod>
@@ -194,6 +212,13 @@
   </url>
   
   <url>
+    <loc>https://zlinni.github.io/tags/es6/</loc>
+    <lastmod>2021-12-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://zlinni.github.io/tags/Echarts/</loc>
     <lastmod>2021-12-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -229,7 +254,7 @@
   </url>
   
   <url>
-    <loc>https://zlinni.github.io/tags/js/</loc>
+    <loc>https://zlinni.github.io/tags/Vue/</loc>
     <lastmod>2021-12-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -237,6 +262,13 @@
   
   <url>
     <loc>https://zlinni.github.io/tags/%E9%9D%A2%E8%AF%95/</loc>
+    <lastmod>2021-12-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://zlinni.github.io/tags/js/</loc>
     <lastmod>2021-12-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
