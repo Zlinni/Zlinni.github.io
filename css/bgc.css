@@ -8,6 +8,8 @@
 #aside_content .card-widget, #recent-posts>.recent-post-item, .layout_page>div:first-child:not(.recent-posts), .layout_post>#page, .layout_post>#post, .read-mode .layout_post>#post{
     /* 以下代表白色透明度为0.3 */
     background: rgba(0,0,0,.7) !important;
+    border:5px solid #0ff5ff;
+    box-shadow: 1px 1px 10px #0ff5ff !important;
 }
 
 [data-theme='dark'] #web_bg:before, [data-theme='dark'] #footer:before, [data-theme='dark'] #page-header:before {
@@ -17,11 +19,18 @@
     background-color: rgba(0,0,0,0);
     content: '';
 }
-#git_container{
+#git_container,#archive,#page{
     background:rgba(0,0,0,.7);
+    border:5px solid #0ff5ff;
+    box-shadow: 1px 1px 20px #0ff5ff !important;
 }
 .gitcalendar-graph{
     padding: 15px 10px 0px !important;
+}
+.card-widget{
+    background:rgba(0,0,0,0.7) !important;
+    border:2px solid #ea03f8 !important;
+    box-shadow: 1px 1px 20px #ea03f8 !important;
 }
 //leancloud:yPV76XNhFIiEQs8P2sM5otbm-MdYXbMMI,BpEFA9kXc8EDEhyuW8cUcxvQ,https://ypv76xnh.api.lncldglobal.com
 //leancloud:yPV76XNhFIiEQs8P2sM5otbm-MdYXbMMI,BpEFA9kXc8EDEhyuW8cUcxvQ,https://ypv76xnh.api.lncldglobal.com
