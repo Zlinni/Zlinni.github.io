@@ -47,6 +47,11 @@
 --font-color:#fdeacc;
 --text-highlight-color:#fdeacc;
 }
+[data-theme=dark] .clock-row {
+color:#fdeacc !important;
+
+}
+
 
 //leancloud:yPV76XNhFIiEQs8P2sM5otbm-MdYXbMMI,BpEFA9kXc8EDEhyuW8cUcxvQ,https://ypv76xnh.api.lncldglobal.com
 //leancloud:yPV76XNhFIiEQs8P2sM5otbm-MdYXbMMI,BpEFA9kXc8EDEhyuW8cUcxvQ,https://ypv76xnh.api.lncldglobal.com
