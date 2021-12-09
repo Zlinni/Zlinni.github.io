@@ -33,7 +33,7 @@
    box-shadow: 1px 1px 20px #0ff5ff !important;
 }
 #card-info-btn{
-   background-color:rgba(0,0,0,0.7) !important;	
+   background-color:transparent !important;	
 }
 .button--animated:before{
    background:#0ff5ff;
