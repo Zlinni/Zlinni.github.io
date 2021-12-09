@@ -47,9 +47,11 @@
 --font-color:#fdeacc;
 --text-highlight-color:#fdeacc;
 }
-[data-theme=dark] .clock-row {
+[data-theme=dark] .clock-row{
 color:#fdeacc !important;
-
+}
+#subtitle{
+color:white;
 }
 
 
