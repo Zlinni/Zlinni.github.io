@@ -50,8 +50,8 @@
 [data-theme=dark] .clock-row{
 color:#fdeacc !important;
 }
-#subtitle{
-color:white;
+#subtitle,#site-title{
+color:#e364d7 !important;
 }
 .author-info__description{
 font-size:19px;
