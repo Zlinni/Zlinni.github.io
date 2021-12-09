@@ -43,5 +43,10 @@
     border:2px solid #ea03f8 !important;
     box-shadow: 1px 1px 20px #ea03f8 !important;
 }
+[data-theme='dark']{
+--font-color:#fdeacc;
+--text-highlight-color:#fdeacc;
+}
+
 //leancloud:yPV76XNhFIiEQs8P2sM5otbm-MdYXbMMI,BpEFA9kXc8EDEhyuW8cUcxvQ,https://ypv76xnh.api.lncldglobal.com
 //leancloud:yPV76XNhFIiEQs8P2sM5otbm-MdYXbMMI,BpEFA9kXc8EDEhyuW8cUcxvQ,https://ypv76xnh.api.lncldglobal.com
