@@ -1,0 +1,53 @@
+#web_bg {	
+    opacity: 0.7;
+}
+#page-header{
+background:transparent !important;	
+}
+/* 所有背景（包括首页卡片、文章页、页面页等） */
+#aside_content .card-widget, #recent-posts>.recent-post-item, .layout_page>div:first-child:not(.recent-posts), .layout_post>#page, .layout_post>#post, .read-mode .layout_post>#post{
+    /* 以下代表白色透明度为0.3 */
+    background: rgba(0,0,0,0.7) !important;
+    border:2px solid #0ff5ff;
+}
+.recent-post-item:hover{
+    box-shadow: 1px 1px 10px #0ff5ff !important;
+}
+#git_container,#archive,#page{
+    background:rgba(0,0,0,0.7);
+    border: 2px solid #0ff5ff !important;
+  
+}
+#git_container:hover{
+  box-shadow: 1px 1px 20px #0ff5ff !important;
+}
+/*收藏博客的边框*/
+.card-info #card-info-btn {
+   border:2px solid #0ff5ff !important;
+   box-shadow: 1px 1px 20px #0ff5ff  !important;
+   background-color:transparent !important;	
+}
+.button--animated:before{
+   background:#0ff5ff;
+}
+/*所有的侧边栏边框*/
+.card-widget{
+    background:rgba(0,0,0,0.7) !important;
+    border:2px solid #ea03f8 !important;
+}
+.card-widget:hover{
+    box-shadow: 1px 1px 20px #ea03f8 !important;
+}
+/*主题下面的字体颜色*/
+[data-theme='dark']{
+--font-color:#fdeacc;
+--text-highlight-color:#fdeacc;
+}
+/*电子时钟的字体颜色*/
+[data-theme=dark] .clock-row{
+color:#fdeacc !important;
+}
+/*标题和副标题*/
+#subtitle,#site-title{
+color:#0ff5ff !important;
+}

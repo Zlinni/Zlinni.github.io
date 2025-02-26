@@ -1,0 +1,399 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>前端必须知道的浏览器性能指标 | 鱼与前端🐟</title><meta name="keywords" content="浏览器"><meta name="author" content="Zlinni"><meta name="copyright" content="Zlinni"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="前言上周一面腾讯云智的时候，面试官问我这么个问题：“你知道浏览器的首屏时间怎么查看吗？”我回答进入页面到最后一个请求回收所用的时间，然后他又问：具体有什么指标来表明呢？于是就有了下文   浏览器性能指标为了描述web页面的性能，开发人员提供了很多可量化的指标来进行分析。比如TTFB、FP、FCP等。指标之间也是有联系的，其中还有部分指标专门为了描述用户交互体验，比如FP、FCP、FSP、FCI、T">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端必须知道的浏览器性能指标">
+<meta property="og:url" content="https://zlinni.github.io/posts/2062480448/index.html">
+<meta property="og:site_name" content="鱼与前端🐟">
+<meta property="og:description" content="前言上周一面腾讯云智的时候，面试官问我这么个问题：“你知道浏览器的首屏时间怎么查看吗？”我回答进入页面到最后一个请求回收所用的时间，然后他又问：具体有什么指标来表明呢？于是就有了下文   浏览器性能指标为了描述web页面的性能，开发人员提供了很多可量化的指标来进行分析。比如TTFB、FP、FCP等。指标之间也是有联系的，其中还有部分指标专门为了描述用户交互体验，比如FP、FCP、FSP、FCI、T">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zlinni.github.io/img/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%B3%BB%E5%88%97/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87.jpg">
+<meta property="article:published_time" content="2022-05-01T14:40:21.000Z">
+<meta property="article:modified_time" content="2022-05-03T10:39:50.366Z">
+<meta property="article:author" content="Zlinni">
+<meta property="article:tag" content="浏览器">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zlinni.github.io/img/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%B3%BB%E5%88%97/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87.jpg"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://zlinni.github.io/posts/2062480448/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="manifest" href="/manifest.json"/><meta name="msapplication-TileColor" content="#000000"/><link rel="apple-touch-icon" sizes="180x180" href="/img/siteicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/img/siteicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/img/siteicon/favicon-16x16.png"/><link rel="mask-icon" href="/img/siteicon/safari-pinned-tab.svg" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Zlinni","link":"链接: ","source":"来源: 鱼与前端🐟","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"top-right"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '前端必须知道的浏览器性能指标',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-03 18:39:50'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    document.addEventListener('pjax:complete', detectApple)})(window)</script><link data-pjax rel="stylesheet" href="/css/bgc.css"><link data-pjax rel="stylesheet" href="/css/neonlight.css"><link data-pjax rel="stylesheet" href="/css/custom.css"><link data-pjax rel="stylesheet" href="/css/aplayer.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="defer" onload="this.media='all'"><div class="aplayer" data-id="7123261369" data-server="netease" data-type="playlist" data-fixed="true" data-listFolded="false" data-order="list" data-preload="none"></div><link rel="stylesheet" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script><script src="./lib/Meting.min.js"></script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://unpkg.zhimg.com/hexo-butterfly-clock/lib/clock.min.css" /><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="鱼与前端🐟" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/head/waku.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">103</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">38</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-heart"></i><span> 闲言碎语</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/artitalk/"><i class="fa-fw fas fa-comment-dots"></i><span> 日常吐槽</span></a></li><li><a class="site-page child" href="/messageboard/"><i class="fa-fw fas fa-comment-dots"></i><span> 留个说法</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/"><i class="fa-fw fa fa-bookmark"></i><span> 前端基础</span></a></li><li><a class="site-page child" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"><i class="fa-fw fa fa-bookmark"></i><span> 前端进阶</span></a></li><li><a class="site-page child" href="/categories/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BF%85%E4%BF%AE/"><i class="fa-fw fa fa-bookmark"></i><span> 程序员必修</span></a></li><li><a class="site-page child" href="/categories/%E9%9D%A2%E8%AF%95/"><i class="fa-fw fa fa-bookmark"></i><span> 面试</span></a></li><li><a class="site-page child" href="/categories/%E9%AD%94%E6%94%B9/"><i class="fa-fw fa fa-bookmark"></i><span> 魔改</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 镜像网站</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://zlinni.gitee.io/"><i class="fa-fw fa fa-link"></i><span> gitee</span></a></li><li><a class="site-page child" href="https://zlinni.github.io/"><i class="fa-fw fa fa-link"></i><span> github</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-desktop"></i><span> 关于本站</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-user-tag"></i><span> 和我无关</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/./img/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%B3%BB%E5%88%97/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">鱼与前端🐟</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-heart"></i><span> 闲言碎语</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/artitalk/"><i class="fa-fw fas fa-comment-dots"></i><span> 日常吐槽</span></a></li><li><a class="site-page child" href="/messageboard/"><i class="fa-fw fas fa-comment-dots"></i><span> 留个说法</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/"><i class="fa-fw fa fa-bookmark"></i><span> 前端基础</span></a></li><li><a class="site-page child" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"><i class="fa-fw fa fa-bookmark"></i><span> 前端进阶</span></a></li><li><a class="site-page child" href="/categories/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BF%85%E4%BF%AE/"><i class="fa-fw fa fa-bookmark"></i><span> 程序员必修</span></a></li><li><a class="site-page child" href="/categories/%E9%9D%A2%E8%AF%95/"><i class="fa-fw fa fa-bookmark"></i><span> 面试</span></a></li><li><a class="site-page child" href="/categories/%E9%AD%94%E6%94%B9/"><i class="fa-fw fa fa-bookmark"></i><span> 魔改</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 镜像网站</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://zlinni.gitee.io/"><i class="fa-fw fa fa-link"></i><span> gitee</span></a></li><li><a class="site-page child" href="https://zlinni.github.io/"><i class="fa-fw fa fa-link"></i><span> github</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-desktop"></i><span> 关于本站</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-user-tag"></i><span> 和我无关</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">前端必须知道的浏览器性能指标</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-01T14:40:21.000Z" title="发表于 2022-05-01 22:40:21">2022-05-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-03T10:39:50.366Z" title="更新于 2022-05-03 18:39:50">2022-05-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%B3%BB%E5%88%97/">浏览器系列</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2,460</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="前端必须知道的浏览器性能指标"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><div class="note primary flat"><p>上周一面腾讯云智的时候，面试官问我这么个问题：“你知道浏览器的首屏时间怎么查看吗？”我回答进入页面到最后一个请求回收所用的时间，然后他又问：具体有什么指标来表明呢？于是就有了下文</p>
+</div>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/性能指标.png" alt=""></p>
+<h1 id="浏览器性能指标"><a href="#浏览器性能指标" class="headerlink" title="浏览器性能指标"></a>浏览器性能指标</h1><p>为了描述web页面的性能，开发人员提供了很多可量化的指标来进行分析。比如TTFB、FP、FCP等。指标之间也是有联系的，其中还有部分指标专门为了描述用户交互体验，比如FP、FCP、FSP、FCI、TTI等。下面就来从用户核心指标开始讲述内容。</p>
+<h1 id="核心指标"><a href="#核心指标" class="headerlink" title="核心指标"></a>核心指标</h1><div class="note primary flat"><p>当用户打开一个页面，会经历一个这样的视觉过程：白屏-&gt;底图-&gt;出现部分内容-&gt;首屏内容出现，但图片还在加载中-&gt;首屏内容和图片都加载完毕</p>
+</div>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/20220502163126.png" alt=""></p>
+<p>一般在这个首屏的内容大部分被加载的时候，用户才能开始和页面进行交互等操作，所以如果这段响应的时间很长，就会导致用户的体验很差，下面的几个核心指标描述这些过程的关键变化点，通过它们我们可以来了解用户体验。</p>
+<ul>
+<li>LCP 最大内容绘制</li>
+<li>FID 第一次交互的延迟</li>
+<li>CLS 累计位移偏差</li>
+</ul>
+<h1 id="Largest-Contentful-Paint-LCP"><a href="#Largest-Contentful-Paint-LCP" class="headerlink" title="Largest Contentful Paint(LCP)"></a>Largest Contentful Paint(LCP)</h1><div class="note primary flat"><p>最大内容绘制，用于记录视窗内最大元素的绘制时间，这个可能随着页面的渲染发生变化。且在用户第一次交互后停止记录。</p>
+</div>
+<p>LCP会持续更新，因此在页面的骨架屏或者loading动画存在的时候，FCP已经记录完了，而LCP因为这个特性，可以让我们知道后续页面的主要内容是什么时候呈现的</p>
+<p>最优时间在2.5s内</p>
+<h2 id="LCP关注什么元素"><a href="#LCP关注什么元素" class="headerlink" title="LCP关注什么元素"></a>LCP关注什么元素</h2><ol>
+<li><code>&lt;img&gt;</code> 元素</li>
+<li><code>&lt;image&gt;</code>元素内的<code>&lt;svg&gt;</code>元素</li>
+<li><code>&lt;video&gt;</code> 元素</li>
+<li>通过 <code>url()</code> 函数加载背景图片的元素</li>
+<li>包含文本节点或其他内联文本元素子级的块级元素。</li>
+</ol>
+<h2 id="改善LCP"><a href="#改善LCP" class="headerlink" title="改善LCP"></a>改善LCP</h2><div class="note primary flat"><p>改善LCP就要从为什么会造成LCP开始说明</p>
+</div>
+<ul>
+<li>服务器响应时间慢 </li>
+<li>阻断渲染的JS和CSS</li>
+<li>资源加载时间慢</li>
+<li>客户端渲染</li>
+</ul>
+<p>从以上的角度去改善LCP</p>
+<h3 id="服务器优化"><a href="#服务器优化" class="headerlink" title="服务器优化"></a>服务器优化</h3><div class="note primary flat"><p>服务器涉及到TTFB这个指标，可以从以下几个方面来优化</p>
+</div>
+<ul>
+<li>缓存HTML离线页面，缓存页面资源，减小浏览器对资源的请求(不是首次)</li>
+<li>压缩HTML</li>
+<li>使用preconnect尽快与服务器建立连接，使用dns-prefetch尽快进行DNS查找</li>
+<li>使用CDN</li>
+</ul>
+<h3 id="优化阻断渲染的资源"><a href="#优化阻断渲染的资源" class="headerlink" title="优化阻断渲染的资源"></a>优化阻断渲染的资源</h3><div class="note primary flat"><p>JS和CSS阻断页面的渲染是无可避免的，我们只能通过CSS和JS压缩合并级联内联来减少</p>
+</div>
+<h3 id="优化资源加载时间"><a href="#优化资源加载时间" class="headerlink" title="优化资源加载时间"></a>优化资源加载时间</h3><div class="note primary flat"><p>上述我们知道LCP只和几个标签有关，那我们就从标签入手优化</p>
+</div>
+<ul>
+<li>对图片进行优化，转WEBP</li>
+<li>对重要的资源进行预加载，比如为 <code>style</code> 标签添加 <code>rel=&quot;preload&quot;</code> 属性</li>
+<li>gzip压缩</li>
+<li>service worker缓存资源</li>
+</ul>
+<h3 id="转服务端渲染"><a href="#转服务端渲染" class="headerlink" title="转服务端渲染"></a>转服务端渲染</h3><p>SSR</p>
+<h1 id="First-Input-Delay-FID"><a href="#First-Input-Delay-FID" class="headerlink" title="First Input Delay(FID)"></a>First Input Delay(FID)</h1><div class="note primary flat"><p>首次输入延迟，记录了FCP和TTI之间用户首次与页面交互的时候响应的延迟。</p>
+</div>
+<p>这个指标衡量响应的延迟，也是表明长任务的一个指标。</p>
+<h2 id="改善FID"><a href="#改善FID" class="headerlink" title="改善FID"></a>改善FID</h2><h3 id="减少JS执行时间"><a href="#减少JS执行时间" class="headerlink" title="减少JS执行时间"></a>减少JS执行时间</h3><p>同上LCP的方法</p>
+<ul>
+<li>缩小并压缩js</li>
+<li>延迟加载首屏不需要的js</li>
+<li>尽量减少未使用的polyfill</li>
+</ul>
+<h3 id="分解耗时任务"><a href="#分解耗时任务" class="headerlink" title="分解耗时任务"></a>分解耗时任务</h3><p>超过50ms的任务都称之为长任务，所以我们可以通过将长任务拆解称为较小的异步任务。</p>
+<h3 id="使用Web-Worker"><a href="#使用Web-Worker" class="headerlink" title="使用Web Worker"></a>使用Web Worker</h3><p>主线程阻塞是FID的根本原因，所以使用Web Worker帮助你在和主线程分离的后台线程上运行js，从而改善FID</p>
+<h1 id="Cumulative-Layout-Shift-CLS"><a href="#Cumulative-Layout-Shift-CLS" class="headerlink" title="Cumulative Layout Shift(CLS)"></a>Cumulative Layout Shift(CLS)</h1><div class="note primary flat"><p>累计位移偏差。也可以理解为视觉稳定性。这个指标是为了记录有些动态插入的内容影响用户的体验诞生的。计算的方法是：位移影响的面积*位移距离</p>
+</div>
+<p>期望值低于0.1是比较好的，说明页面跳来跳去的情况比较少。如果有广告插入对用户的体验也不是很好</p>
+<h2 id="改善CLS"><a href="#改善CLS" class="headerlink" title="改善CLS"></a>改善CLS</h2><p>位移会造成CLS变大，那么就从这个方面开始改善。</p>
+<h3 id="不使用无尺寸的元素"><a href="#不使用无尺寸的元素" class="headerlink" title="不使用无尺寸的元素"></a>不使用无尺寸的元素</h3><p>这方面的知识可能很多人都不是很清楚，我们除了要设置图片的长宽之外，还可以指定他的长宽比<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">img</span>&#123;</span><br><span class="line">  aspect-ratio: <span class="built_in">attr</span>(width)/ <span class="built_in">attr</span>(height)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>对于响应式的图片，我们可以这样设置<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">img</span> </span><br><span class="line">    <span class="attribute">width</span>=&quot;<span class="number">1000</span>&quot; </span><br><span class="line">    <span class="attribute">height</span>=&quot;<span class="number">1000</span>&quot;</span><br><span class="line">    <span class="attribute">src</span>=&quot;puppy-<span class="number">1000</span><span class="selector-class">.jpg</span>&quot;</span><br><span class="line">    srcset=&quot;puppy-<span class="number">1000</span><span class="selector-class">.jpg</span> <span class="number">1000</span>w,</span><br><span class="line">            puppy-<span class="number">2000</span><span class="selector-class">.jpg</span> <span class="number">2000</span>w,</span><br><span class="line">            puppy-<span class="number">3000</span><span class="selector-class">.jpg</span> <span class="number">3000</span>w&quot;</span><br><span class="line">    alt=&quot;ConardLi&quot;</span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>不要在现有的内容之上插入内容，除非是响应式的用户交互。</li>
+<li>宁可转换动画，也不要转换触发布局变化的属性的动画</li>
+</ul>
+<h3 id="提前给广告位预留空间"><a href="#提前给广告位预留空间" class="headerlink" title="提前给广告位预留空间"></a>提前给广告位预留空间</h3><p>很多页面的广告都是动态插入的，所以要为广告位预留空间</p>
+<h3 id="字体变化"><a href="#字体变化" class="headerlink" title="字体变化"></a>字体变化</h3><p>字体变化可以采用<code>font-display:swap</code>和<code>preload</code>的方式提前加载，还有转格式并压缩的方式。</p>
+<h1 id="First-Paint-FP"><a href="#First-Paint-FP" class="headerlink" title="First Paint (FP)"></a>First Paint (FP)</h1><div class="note primary flat"><p>从开始加载到浏览器首次绘制像素到屏幕上的时间，也就是页面在屏幕上首次发生视觉变化的时间。但此变化可能是简单的背景色更新或者不引人注意的内容，她并不代表页面的完整性，可能会报告没有任何可见内容被绘制的时间</p>
+</div>
+<h2 id="测量方式"><a href="#测量方式" class="headerlink" title="测量方式"></a>测量方式</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getFirstPaint</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> firstPaints = &#123;&#125;;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> performance.getEntriesByType === <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> performanceEntries = performance.getEntriesByType(<span class="string">&#x27;paint&#x27;</span>) || [];</span><br><span class="line">    performanceEntries.forEach(<span class="function">(<span class="params">entry</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (entry.name === <span class="string">&#x27;first-paint&#x27;</span>) &#123;</span><br><span class="line">        firstPaints.firstPaint = entry.startTime;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (entry.name === <span class="string">&#x27;first-contentful-paint&#x27;</span>) &#123;</span><br><span class="line">        firstPaints.firstContentfulPaint = entry.startTime;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (chrome &amp;&amp; chrome.loadTimes) &#123;</span><br><span class="line">      <span class="keyword">let</span> loadTimes = <span class="built_in">window</span>.chrome.loadTimes();</span><br><span class="line">      <span class="keyword">let</span> &#123;firstPaintTime, startLoadTime&#125; = loadTimes;</span><br><span class="line">      firstPaints.firstPaint = (firstPaintTime - startLoadTime) * <span class="number">1000</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (performance.timing &amp;&amp; <span class="keyword">typeof</span> performance.timing.msFirstPaint === <span class="string">&#x27;number&#x27;</span>) &#123;</span><br><span class="line">      <span class="keyword">let</span> &#123;msFirstPaint, navigationStart&#125; = performance.timing;</span><br><span class="line">      firstPaints.firstPaint = msFirstPaint - navigationStart;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> firstPaints;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="First-Contentful-Paint-FCP"><a href="#First-Contentful-Paint-FCP" class="headerlink" title="First Contentful Paint (FCP)"></a>First Contentful Paint (FCP)</h1><div class="note primary flat"><p>这个指标用于记录浏览器首次绘制来自DOM内容的时间，内容必须是文本、图片(包含背景图)、非白色的canvas或SVG、也包含正在加载中的Web字体的文本。</p>
+</div>
+<p>该阶段用户看到的可能是一个header或者导航栏，并不一定是用户值得消费的内容</p>
+<p>且字体对FCP影响比较大，我们可以使用<code>font-display:swap</code>的方式让浏览器一开始就使用系统的字体，等字体更新好再使用自定义的字体</p>
+<p>字体的优化还可以从格式上，比如将：</p>
+<p>FCP的测量方式见FP</p>
+<p>最优时间<br>关于这两个指标，有如下的时间体验<br><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/20220502170159.png" alt=""></p>
+<p>我们可以看出在2s以内能完成就算体验优秀，详细的也可以在LightHouse中查看</p>
+<h1 id="Time-to-Interactive-TTI"><a href="#Time-to-Interactive-TTI" class="headerlink" title="Time to Interactive(TTI)"></a>Time to Interactive(TTI)</h1><div class="note primary flat"><p>首次可交互时间，计算比较复杂，需要满足以下几个条件</p>
+</div>
+<ol>
+<li>FCP指标之后开始计算</li>
+<li>持续五秒没有长任务（执行时间超过50ms）且无两个以上正在进行的GET请求<br>3， 往前回溯至5s前的最后一个长任务结束时间。</li>
+</ol>
+<p>50ms是谷歌定义的，推荐的响应时间是100ms以内，如果超过了这个时间，用户会有延迟感。</p>
+<p>这个指标衡量了响应交互。</p>
+<h1 id="Total-Blocking-Time-TBT"><a href="#Total-Blocking-Time-TBT" class="headerlink" title="Total Blocking Time(TBT)"></a>Total Blocking Time(TBT)</h1><div class="note primary flat"><p>阻塞总时间，记录了FCP到TTI之间所有长任务的阻塞时间总和。</p>
+</div>
+<h1 id="Time-to-First-Byte-TTFB"><a href="#Time-to-First-Byte-TTFB" class="headerlink" title="Time to First Byte(TTFB)"></a>Time to First Byte(TTFB)</h1><p>服务器有关<br><div class="note primary flat"><p>浏览器从请求页面开始到接收第一字节的时间，这个时间段内包括 DNS 查找、TCP 连接和 SSL 连接。</p>
+</div></p>
+<h1 id="DomContentLoaded（DCL）"><a href="#DomContentLoaded（DCL）" class="headerlink" title="DomContentLoaded（DCL）"></a>DomContentLoaded（DCL）</h1><div class="note primary flat"><p>DomContentLoaded 事件触发的时间。当 HTML 文档被完全加载和解析完成之后，DOMContentLoaded 事件被触发，而无需等待样式表、图像和子框架加载完成。</p>
+</div>
+<h1 id="Load-L"><a href="#Load-L" class="headerlink" title="Load(L)"></a>Load(L)</h1><div class="note primary flat"><p>onLoad 事件触发的时间。页面所有资源都加载完毕后（比如图片，CSS），onLoad 事件才被触发。</p>
+</div>
+<h1 id="关于核心指标"><a href="#关于核心指标" class="headerlink" title="关于核心指标"></a>关于核心指标</h1><p>LCP代表了页面的速度，且LCP在目前流行loading和骨架屏的情况下，能体现的东西就更多了。他的指标实时更新，数据更精确，且代表着页面最大元素的渲染时间，通常来说最大元素的快速加载能让用户感觉性能还好。</p>
+<p>FID表示页面的交互体验指标，如果他快说明交互的延迟低，会让用户觉得网页流畅。</p>
+<p>CLS代表了页面的稳定性，尤其在手机上更为重要。因为收集屏幕小的原因，偏移差越多导致视觉交互越差，降低用户体验。</p>
+<h1 id="关于指标收集"><a href="#关于指标收集" class="headerlink" title="关于指标收集"></a>关于指标收集</h1><h2 id="Lighthouse"><a href="#Lighthouse" class="headerlink" title="Lighthouse"></a>Lighthouse</h2><p>使用到了Lighthouse，这个是Chrome自带的性能指标获取器，会显示出具体的指标名称和时间，以及分数。</p>
+<p><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/20220502193259.png" alt=""></p>
+<h2 id="web-vitals-extension"><a href="#web-vitals-extension" class="headerlink" title="web-vitals-extension"></a>web-vitals-extension</h2><p>可以用这个插件来获取三大核心指标：LCP、FID、CLS</p>
+<h2 id="web-vitals-库"><a href="#web-vitals-库" class="headerlink" title="web-vitals 库"></a>web-vitals 库</h2><p>使用这个库可以获取CLS、FID、LCP以及FCP、TTFB</p>
+<p>使用方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;getCLS, getFID, getLCP&#125; <span class="keyword">from</span> <span class="string">&#x27;web-vitals&#x27;</span>;</span><br><span class="line"></span><br><span class="line">getCLS(<span class="built_in">console</span>.log);</span><br><span class="line">getFID(<span class="built_in">console</span>.log);</span><br><span class="line">getLCP(<span class="built_in">console</span>.log);</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<h2 id="Chrome-DevTools"><a href="#Chrome-DevTools" class="headerlink" title="Chrome DevTools"></a>Chrome DevTools</h2><p>打开performance就可以获取指标</p>
+<h2 id="代码收集"><a href="#代码收集" class="headerlink" title="代码收集"></a>代码收集</h2><p>使用<code>window.performance</code>或其他第三方的库</p>
+<h1 id="关于测试"><a href="#关于测试" class="headerlink" title="关于测试"></a>关于测试</h1><p>资源加载方面的延迟：使用sleep的方式人为的控制资源的加载时长。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;./css/index.css?sleep=3000&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>网络方面的延迟：使用chrome的网速调节，可以方便我们测试占位图，骨架屏的情况。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Zlinni</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://zlinni.github.io/posts/2062480448/">https://zlinni.github.io/posts/2062480448/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://zlinni.github.io" target="_blank">鱼与前端🐟</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/">浏览器</a></div><div class="post_share"><div class="social-share" data-image="/./img/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%B3%BB%E5%88%97/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/2090815300/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/js%E7%B3%BB%E5%88%97/%E4%BB%8E0%E5%88%B01TypeScript.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">从0到1TypeScript</div></div></a></div><div class="next-post pull-right"><a href="/posts/1410341477/"><img class="next-cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/%E7%AE%97%E6%B3%95%E7%B3%BB%E5%88%97/bt1.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Binary Tree二叉树笔记①--纲领篇</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/head/waku.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Zlinni</div><div class="author-info__description">就像新年的清晨换上新内裤一样清爽~~</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">103</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">38</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div></div><a class="button--animated" id="card-info-btn" href="JavaScript:join_favorite('https://zlinni.github.io/','zlinni'+'\''+'s blog for study');"><i class="fa fa-star"></i><span>收藏本博客</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/zlinni" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:984328216@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/959f01bf0881d767a936f6846424fd7.jpg" target="_blank" title="WeChat"><i class="fab fa-weixin"></i></a><a class="social-icon" href="https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/f25ad3d4388a03078ea5671f024de65.jpg" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">Typora已弃，转VScode。This is my Blog 如果你有什么问题 请在评论区讨论或私信984328216@qq.com</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-number">2.</span> <span class="toc-text">浏览器性能指标</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%8C%87%E6%A0%87"><span class="toc-number">3.</span> <span class="toc-text">核心指标</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Largest-Contentful-Paint-LCP"><span class="toc-number">4.</span> <span class="toc-text">Largest Contentful Paint(LCP)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#LCP%E5%85%B3%E6%B3%A8%E4%BB%80%E4%B9%88%E5%85%83%E7%B4%A0"><span class="toc-number">4.1.</span> <span class="toc-text">LCP关注什么元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%B9%E5%96%84LCP"><span class="toc-number">4.2.</span> <span class="toc-text">改善LCP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BC%98%E5%8C%96"><span class="toc-number">4.2.1.</span> <span class="toc-text">服务器优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E9%98%BB%E6%96%AD%E6%B8%B2%E6%9F%93%E7%9A%84%E8%B5%84%E6%BA%90"><span class="toc-number">4.2.2.</span> <span class="toc-text">优化阻断渲染的资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E8%B5%84%E6%BA%90%E5%8A%A0%E8%BD%BD%E6%97%B6%E9%97%B4"><span class="toc-number">4.2.3.</span> <span class="toc-text">优化资源加载时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93"><span class="toc-number">4.2.4.</span> <span class="toc-text">转服务端渲染</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#First-Input-Delay-FID"><span class="toc-number">5.</span> <span class="toc-text">First Input Delay(FID)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%B9%E5%96%84FID"><span class="toc-number">5.1.</span> <span class="toc-text">改善FID</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%8F%E5%B0%91JS%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4"><span class="toc-number">5.1.1.</span> <span class="toc-text">减少JS执行时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E8%A7%A3%E8%80%97%E6%97%B6%E4%BB%BB%E5%8A%A1"><span class="toc-number">5.1.2.</span> <span class="toc-text">分解耗时任务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8Web-Worker"><span class="toc-number">5.1.3.</span> <span class="toc-text">使用Web Worker</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Cumulative-Layout-Shift-CLS"><span class="toc-number">6.</span> <span class="toc-text">Cumulative Layout Shift(CLS)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%B9%E5%96%84CLS"><span class="toc-number">6.1.</span> <span class="toc-text">改善CLS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E4%BD%BF%E7%94%A8%E6%97%A0%E5%B0%BA%E5%AF%B8%E7%9A%84%E5%85%83%E7%B4%A0"><span class="toc-number">6.1.1.</span> <span class="toc-text">不使用无尺寸的元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E5%89%8D%E7%BB%99%E5%B9%BF%E5%91%8A%E4%BD%8D%E9%A2%84%E7%95%99%E7%A9%BA%E9%97%B4"><span class="toc-number">6.1.2.</span> <span class="toc-text">提前给广告位预留空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E4%BD%93%E5%8F%98%E5%8C%96"><span class="toc-number">6.1.3.</span> <span class="toc-text">字体变化</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#First-Paint-FP"><span class="toc-number">7.</span> <span class="toc-text">First Paint (FP)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E9%87%8F%E6%96%B9%E5%BC%8F"><span class="toc-number">7.1.</span> <span class="toc-text">测量方式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#First-Contentful-Paint-FCP"><span class="toc-number">8.</span> <span class="toc-text">First Contentful Paint (FCP)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Time-to-Interactive-TTI"><span class="toc-number">9.</span> <span class="toc-text">Time to Interactive(TTI)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Total-Blocking-Time-TBT"><span class="toc-number">10.</span> <span class="toc-text">Total Blocking Time(TBT)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Time-to-First-Byte-TTFB"><span class="toc-number">11.</span> <span class="toc-text">Time to First Byte(TTFB)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DomContentLoaded%EF%BC%88DCL%EF%BC%89"><span class="toc-number">12.</span> <span class="toc-text">DomContentLoaded（DCL）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Load-L"><span class="toc-number">13.</span> <span class="toc-text">Load(L)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E6%A0%B8%E5%BF%83%E6%8C%87%E6%A0%87"><span class="toc-number">14.</span> <span class="toc-text">关于核心指标</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E6%8C%87%E6%A0%87%E6%94%B6%E9%9B%86"><span class="toc-number">15.</span> <span class="toc-text">关于指标收集</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Lighthouse"><span class="toc-number">15.1.</span> <span class="toc-text">Lighthouse</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web-vitals-extension"><span class="toc-number">15.2.</span> <span class="toc-text">web-vitals-extension</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web-vitals-%E5%BA%93"><span class="toc-number">15.3.</span> <span class="toc-text">web-vitals 库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chrome-DevTools"><span class="toc-number">15.4.</span> <span class="toc-text">Chrome DevTools</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E6%94%B6%E9%9B%86"><span class="toc-number">15.5.</span> <span class="toc-text">代码收集</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E6%B5%8B%E8%AF%95"><span class="toc-number">16.</span> <span class="toc-text">关于测试</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/44742292888/" title="基于CASL的前端权限管理方案"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/%E5%B7%A5%E7%A8%8B%E5%8C%96%E7%B3%BB%E5%88%97/%E5%9F%BA%E4%BA%8ECASL%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E6%96%B9%E6%A1%88.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基于CASL的前端权限管理方案"/></a><div class="content"><a class="title" href="/posts/44742292888/" title="基于CASL的前端权限管理方案">基于CASL的前端权限管理方案</a><time datetime="2024-01-05T03:51:55.000Z" title="发表于 2024-01-05 11:51:55">2024-01-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/3034349472/" title="Mock封装与实操"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/Mock%E5%B0%81%E8%A3%85%E4%B8%8E%E5%AE%9E%E6%93%8D.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Mock封装与实操"/></a><div class="content"><a class="title" href="/posts/3034349472/" title="Mock封装与实操">Mock封装与实操</a><time datetime="2023-03-11T16:00:00.000Z" title="发表于 2023-03-12 00:00:00">2023-03-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/1946841451/" title="记录一次histroy模式的vue项目部署到githubpage"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/vue%E7%B3%BB%E5%88%97/histroy%E6%A8%A1%E5%BC%8Fvue%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%88%B0githubpage.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="记录一次histroy模式的vue项目部署到githubpage"/></a><div class="content"><a class="title" href="/posts/1946841451/" title="记录一次histroy模式的vue项目部署到githubpage">记录一次histroy模式的vue项目部署到githubpage</a><time datetime="2023-03-11T12:19:53.000Z" title="发表于 2023-03-11 20:19:53">2023-03-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/96411472/" title="microapp微前端实践"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/microapp%E5%BE%AE%E5%89%8D%E7%AB%AF%E5%AE%9E%E8%B7%B5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="microapp微前端实践"/></a><div class="content"><a class="title" href="/posts/96411472/" title="microapp微前端实践">microapp微前端实践</a><time datetime="2023-03-11T12:19:53.000Z" title="发表于 2023-03-11 20:19:53">2023-03-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/1435485109/" title="利用h函数编写组件"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/vue%E7%B3%BB%E5%88%97/%E5%88%A9%E7%94%A8h%E5%87%BD%E6%95%B0%E7%BC%96%E5%86%99%E7%BB%84%E4%BB%B6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="利用h函数编写组件"/></a><div class="content"><a class="title" href="/posts/1435485109/" title="利用h函数编写组件">利用h函数编写组件</a><time datetime="2023-02-09T15:23:14.000Z" title="发表于 2023-02-09 23:23:14">2023-02-09</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By Zlinni</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'yPV76XNhFIiEQs8P2sM5otbm-MdYXbMMI',
+      appKey: 'BEA2efs1n5lnxkb5cjYQ0xC8',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script data-pjax src="/js/collection.js"></script><script data-pjax src="/js/addele.js"></script><script data-pjax src="/js/eve.js"></script><script data-pjax src="/js/addnodestory.js"></script><script defer src="/live2d-widget/autoload.js"></script><script src="/js/pwanewdir.js"></script><script defer src="https://cdn.jsdelivr.net/gh/graingert/wow@1.3.0/dist/wow.min.js"></script><script defer data-pjax src="/js/fadeIn.js"></script><script defer data-pjax  src="/js/jljy.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"]):not([href="/messageboard/"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+  window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/odd.png);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/日常杂谈/&quot;);" href="javascript:void(0);">日常杂谈</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/even.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/CSS系列/&quot;);" href="javascript:void(0);">CSS系列</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/odd.png);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/JS系列/&quot;);" href="javascript:void(0);">JS系列</a><span class="categoryBar-list-count">15</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/even.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Vue系列/&quot;);" href="javascript:void(0);">Vue系列</a><span class="categoryBar-list-count">22</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/odd.png);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/前端基础/&quot;);" href="javascript:void(0);">前端基础</a><span class="categoryBar-list-count">11</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/even.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/浏览器系列/&quot;);" href="javascript:void(0);">浏览器系列</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/odd.png);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Webpack系列/&quot;);" href="javascript:void(0);">Webpack系列</a><span class="categoryBar-list-count">5</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/even.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/前端进阶/&quot;);" href="javascript:void(0);">前端进阶</a><span class="categoryBar-list-count">5</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/odd.png);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/网络系列/&quot;);" href="javascript:void(0);">网络系列</a><span class="categoryBar-list-count">9</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/even.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/算法指南/&quot;);" href="javascript:void(0);">算法指南</a><span class="categoryBar-list-count">12</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/odd.png);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/面试指南/&quot;);" href="javascript:void(0);">面试指南</a><span class="categoryBar-list-count">9</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/even.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/魔改系列/&quot;);" href="javascript:void(0);">魔改系列</a><span class="categoryBar-list-count">9</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/算法指南/Binary-Tree/&quot;);" href="javascript:void(0);">Binary Tree</a><span class="categoryBar-list-count">9</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/工程化系列/&quot;);" href="javascript:void(0);">工程化系列</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_clock_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://unpkg.zhimg.com/hexo-butterfly-clock/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_injector_config();
+  }
+  </script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script data-pjax src="https://unpkg.zhimg.com/hexo-butterfly-clock/lib/clock.min.js"></script><!-- hexo injector body_end end --><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

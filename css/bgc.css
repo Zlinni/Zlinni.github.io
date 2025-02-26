@@ -1,0 +1,108 @@
+
+/* 文章页背景 */
+.post {
+    background:rgba(0,0,0,0.7)!important;
+}
+#post{
+    background:rgba(0,0,0,0.8)!important;
+}
+
+[data-theme='dark'] #web_bg:before, [data-theme='dark'] #footer:before, [data-theme='dark'] #page-header:before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0);
+    content: '';
+}
+
+.gitcalendar-graph{
+    padding: 15px 10px 0px !important;
+}
+
+
+.author-info__description{
+font-size:19px;
+}
+.avatar-img{
+display: flex;
+justify-content: center;
+align-items: center;
+overflow:visible;
+border-radius:55px;
+box-shadow: 0 0 10px black;
+background:linear-gradient(135deg,rgb(1,255,234),rgb(255,251,14),rgb(0,238,255));
+animation: color 3s linear infinite;
+transition: all 0.5s;
+}
+.avatar-img:hover{
+            box-shadow: 0 0 15px 0 #000;
+}
+@keyframes color {
+            to{
+                filter: hue-rotate(360deg);
+            }
+}
+.avatar-img img{
+display:none;
+}
+.centerBox{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.newheadBox{
+position:absolute;
+top:25px;
+width:100px;
+height:100px;
+border-radius:50px;
+background:url(../img/head/waku3.png);
+background-size:cover;
+z-index:20;
+}
+body{
+cursor:url(https://cdn.custom-cursor.com/db/7248/32/starter-3d-effect-cursor-cursor.png) , default!important;
+}
+a,img,button{
+cursor:url(https://cdn.custom-cursor.com/db/7247/32/starter-3d-effect-cursor-pointer.png) , pointer!important;
+}
+#nav .menus_items .menus_item .menus_item_child{
+border-radius:15px;
+}
+#nav .site-page:not(.child):after{
+z-index:23 !important;
+}
+/*发表于*/
+        @keyframes turn {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            25% {
+                -webkit-transform: rotate(90deg);
+            }
+
+            50% {
+                -webkit-transform: rotate(180deg);
+            }
+
+            75% {
+                -webkit-transform: rotate(270deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        .newheadBox:hover {
+            animation: turn linear 0.5s;
+        }
+
+#article-container.post-content ol li:before, #article-container.post-content ul li:before{
+	background:rebeccapurple
+}
+
+#article-container.post-content ul > li:not(.tab):before {
+	border: 0.21em solid rebeccapurple !important;
+}

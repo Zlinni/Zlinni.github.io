@@ -1,0 +1,439 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HTML入门教程 | 鱼与前端🐟</title><meta name="keywords" content="前端,HTML"><meta name="author" content="Zlinni"><meta name="copyright" content="Zlinni"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="简介 Hyper Text Makeup Language 超文本标记语言 加入了图片，声音，动画，多媒体等内容 从一个文件跳转到另一个文件，与世界各地主机的文件连接  文件连接 不是编程语言 而是一种标记语言 makeup language 标记语言也是一套标记标签  常用浏览器 ie 火狐 谷歌 edge safari opera 被称为五大浏览器 浏览器内核： 一种渲染引擎，读取网页内容，整">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML入门教程">
+<meta property="og:url" content="https://zlinni.github.io/posts/2475189015/index.html">
+<meta property="og:site_name" content="鱼与前端🐟">
+<meta property="og:description" content="简介 Hyper Text Makeup Language 超文本标记语言 加入了图片，声音，动画，多媒体等内容 从一个文件跳转到另一个文件，与世界各地主机的文件连接  文件连接 不是编程语言 而是一种标记语言 makeup language 标记语言也是一套标记标签  常用浏览器 ie 火狐 谷歌 edge safari opera 被称为五大浏览器 浏览器内核： 一种渲染引擎，读取网页内容，整">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zlinni.github.io/img/%E5%9F%BA%E7%A1%80%E7%B3%BB%E5%88%97/html.jpg">
+<meta property="article:published_time" content="2021-11-30T03:14:36.000Z">
+<meta property="article:modified_time" content="2022-07-01T11:30:09.444Z">
+<meta property="article:author" content="Zlinni">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="HTML">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zlinni.github.io/img/%E5%9F%BA%E7%A1%80%E7%B3%BB%E5%88%97/html.jpg"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://zlinni.github.io/posts/2475189015/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="manifest" href="/manifest.json"/><meta name="msapplication-TileColor" content="#000000"/><link rel="apple-touch-icon" sizes="180x180" href="/img/siteicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/img/siteicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/img/siteicon/favicon-16x16.png"/><link rel="mask-icon" href="/img/siteicon/safari-pinned-tab.svg" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Zlinni","link":"链接: ","source":"来源: 鱼与前端🐟","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"top-right"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'HTML入门教程',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-07-01 19:30:09'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    document.addEventListener('pjax:complete', detectApple)})(window)</script><link data-pjax rel="stylesheet" href="/css/bgc.css"><link data-pjax rel="stylesheet" href="/css/neonlight.css"><link data-pjax rel="stylesheet" href="/css/custom.css"><link data-pjax rel="stylesheet" href="/css/aplayer.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="defer" onload="this.media='all'"><div class="aplayer" data-id="7123261369" data-server="netease" data-type="playlist" data-fixed="true" data-listFolded="false" data-order="list" data-preload="none"></div><link rel="stylesheet" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script><script src="./lib/Meting.min.js"></script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://unpkg.zhimg.com/hexo-butterfly-clock/lib/clock.min.css" /><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="鱼与前端🐟" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/head/waku.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">103</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">38</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-heart"></i><span> 闲言碎语</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/artitalk/"><i class="fa-fw fas fa-comment-dots"></i><span> 日常吐槽</span></a></li><li><a class="site-page child" href="/messageboard/"><i class="fa-fw fas fa-comment-dots"></i><span> 留个说法</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/"><i class="fa-fw fa fa-bookmark"></i><span> 前端基础</span></a></li><li><a class="site-page child" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"><i class="fa-fw fa fa-bookmark"></i><span> 前端进阶</span></a></li><li><a class="site-page child" href="/categories/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BF%85%E4%BF%AE/"><i class="fa-fw fa fa-bookmark"></i><span> 程序员必修</span></a></li><li><a class="site-page child" href="/categories/%E9%9D%A2%E8%AF%95/"><i class="fa-fw fa fa-bookmark"></i><span> 面试</span></a></li><li><a class="site-page child" href="/categories/%E9%AD%94%E6%94%B9/"><i class="fa-fw fa fa-bookmark"></i><span> 魔改</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 镜像网站</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://zlinni.gitee.io/"><i class="fa-fw fa fa-link"></i><span> gitee</span></a></li><li><a class="site-page child" href="https://zlinni.github.io/"><i class="fa-fw fa fa-link"></i><span> github</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-desktop"></i><span> 关于本站</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-user-tag"></i><span> 和我无关</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/./img/%E5%9F%BA%E7%A1%80%E7%B3%BB%E5%88%97/html.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">鱼与前端🐟</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-heart"></i><span> 闲言碎语</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/artitalk/"><i class="fa-fw fas fa-comment-dots"></i><span> 日常吐槽</span></a></li><li><a class="site-page child" href="/messageboard/"><i class="fa-fw fas fa-comment-dots"></i><span> 留个说法</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/"><i class="fa-fw fa fa-bookmark"></i><span> 前端基础</span></a></li><li><a class="site-page child" href="/categories/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/"><i class="fa-fw fa fa-bookmark"></i><span> 前端进阶</span></a></li><li><a class="site-page child" href="/categories/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BF%85%E4%BF%AE/"><i class="fa-fw fa fa-bookmark"></i><span> 程序员必修</span></a></li><li><a class="site-page child" href="/categories/%E9%9D%A2%E8%AF%95/"><i class="fa-fw fa fa-bookmark"></i><span> 面试</span></a></li><li><a class="site-page child" href="/categories/%E9%AD%94%E6%94%B9/"><i class="fa-fw fa fa-bookmark"></i><span> 魔改</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 镜像网站</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://zlinni.gitee.io/"><i class="fa-fw fa fa-link"></i><span> gitee</span></a></li><li><a class="site-page child" href="https://zlinni.github.io/"><i class="fa-fw fa fa-link"></i><span> github</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-desktop"></i><span> 关于本站</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-user-tag"></i><span> 和我无关</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">HTML入门教程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-11-30T03:14:36.000Z" title="发表于 2021-11-30 11:14:36">2021-11-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-01T11:30:09.444Z" title="更新于 2022-07-01 19:30:09">2022-07-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">前端基础</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">0</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="HTML入门教程"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><ul>
+<li>Hyper Text Makeup Language 超文本标记语言</li>
+<li>加入了图片，声音，动画，多媒体等内容</li>
+<li>从一个文件跳转到另一个文件，与世界各地主机的文件连接</li>
+</ul>
+<h1 id="文件连接"><a href="#文件连接" class="headerlink" title="文件连接"></a>文件连接</h1><ul>
+<li>不是编程语言 而是一种标记语言 makeup language</li>
+<li>标记语言也是一套标记标签</li>
+</ul>
+<h1 id="常用浏览器"><a href="#常用浏览器" class="headerlink" title="常用浏览器"></a>常用浏览器</h1><ul>
+<li>ie 火狐 谷歌 edge safari opera 被称为五大浏览器</li>
+<li>浏览器内核： 一种渲染引擎，读取网页内容，整理讯息，计算网页的显示方式并显示页面</li>
+</ul>
+<h1 id="Web标准"><a href="#Web标准" class="headerlink" title="Web标准"></a>Web标准</h1><ul>
+<li>Web标准是由W3C组织和其他标准化组织定制的一系列标准的的集合</li>
+<li>为什么需要Web标准？<br>浏览器不同，显示的页面和排版就有差异</li>
+<li>Web标准的构成<br>结构：整理和分类网页元素，主要是HTML<br>表现：设置网页的版式，颜色，大小等外观格式，主要是CSS<br>行为：网页模型的定义以及交互的编写，主要是JavaScript</li>
+<li>因此，结构写进HTML文件中，表现写到CSS文件中，行为写到Javascript文件中</li>
+</ul>
+<h1 id="HTML常用标签"><a href="#HTML常用标签" class="headerlink" title="HTML常用标签"></a>HTML常用标签</h1><h2 id="语法规范"><a href="#语法规范" class="headerlink" title="语法规范"></a>语法规范</h2><ul>
+<li>基本语法概述</li>
+</ul>
+<ol>
+<li>HTML标签是由尖括号包围的关键词 eg <html></li>
+<li>HTML标签通常是成对出现的 eg <html></html>称为双标签，第一个是开始标签，第二个是结束标签</li>
+<li>特殊标签 eg &lt;/br&gt; 称之为单标签</li>
+</ol>
+<ul>
+<li>标签关系</li>
+</ul>
+<ol>
+<li>包含关系</li>
+<li>并列关系</li>
+</ol>
+<h2 id="基本结构标签"><a href="#基本结构标签" class="headerlink" title="基本结构标签"></a>基本结构标签</h2><ul>
+<li>每一个网页都有一个基本标签结构，称为骨架标签；HTML页面也称为HTML文档</li>
+</ul>
+<ol>
+<li><p><html></html>页面中最大的标签，称为根标签</p>
+</li>
+<li><p>文档的头部，注意在其中必须设置的标签是title</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><title></title>让页面有属于自己的网页标题</p>
+</li>
+<li><p><body><!-- hexo injector body_end start --><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/odd.png);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/日常杂谈/&quot;);" href="javascript:void(0);">日常杂谈</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/even.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/CSS系列/&quot;);" href="javascript:void(0);">CSS系列</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/odd.png);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/JS系列/&quot;);" href="javascript:void(0);">JS系列</a><span class="categoryBar-list-count">15</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/even.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Vue系列/&quot;);" href="javascript:void(0);">Vue系列</a><span class="categoryBar-list-count">22</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/odd.png);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/前端基础/&quot;);" href="javascript:void(0);">前端基础</a><span class="categoryBar-list-count">11</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/even.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/浏览器系列/&quot;);" href="javascript:void(0);">浏览器系列</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/odd.png);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Webpack系列/&quot;);" href="javascript:void(0);">Webpack系列</a><span class="categoryBar-list-count">5</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/even.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/前端进阶/&quot;);" href="javascript:void(0);">前端进阶</a><span class="categoryBar-list-count">5</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/odd.png);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/网络系列/&quot;);" href="javascript:void(0);">网络系列</a><span class="categoryBar-list-count">9</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/even.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/算法指南/&quot;);" href="javascript:void(0);">算法指南</a><span class="categoryBar-list-count">12</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/odd.png);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/面试指南/&quot;);" href="javascript:void(0);">面试指南</a><span class="categoryBar-list-count">9</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/even.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/魔改系列/&quot;);" href="javascript:void(0);">魔改系列</a><span class="categoryBar-list-count">9</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/算法指南/Binary-Tree/&quot;);" href="javascript:void(0);">Binary Tree</a><span class="categoryBar-list-count">9</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/工程化系列/&quot;);" href="javascript:void(0);">工程化系列</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_clock_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://unpkg.zhimg.com/hexo-butterfly-clock/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_injector_config();
+  }
+  </script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script data-pjax src="https://unpkg.zhimg.com/hexo-butterfly-clock/lib/clock.min.js"></script><!-- hexo injector body_end end --></body>文档的主题 元素包含文档的所有内容，页面的内容基本都是放进body里面</p>
+</li>
+</ol>
+<h2 id="网页开发工具"><a href="#网页开发工具" class="headerlink" title="网页开发工具"></a>网页开发工具</h2><ul>
+<li>字符集</li>
+</ul>
+<ol>
+<li>在head标签内，可以通过meta标签的charset属性规定HTML文档应该使用哪种字符编码</li>
+<li>UTF-8 万国码，基本包括了全世界所有国家所需要的字符</li>
+<li>&lt;! DOCTYPE html&gt;文档声明类型标签，告诉浏览器这个页面采取html5版本来显示页面</li>
+<li><html lang="en">告诉浏览器或者搜索引擎这个是一个英文网站，本页面将采用英文来显示</li>
+<li><mata charset="UTF-8">必须写，否则乱码。</li>
+</ol>
+<h2 id="常用标签"><a href="#常用标签" class="headerlink" title="常用标签"></a>常用标签</h2><h2 id="标题标签"><a href="#标题标签" class="headerlink" title="标题标签"></a>标题标签</h2><ol>
+<li><p>格式</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>-<span class="tag">&lt;<span class="name">h6</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>为head缩写，在标签内的字体会变大变粗</p>
+</li>
+<li><p>由1-6大小逐渐递减</p>
+</li>
+</ol>
+<h2 id="段落和换行标签"><a href="#段落和换行标签" class="headerlink" title="段落和换行标签"></a>段落和换行标签</h2><ol>
+<li><p><p>标签用于定义段落 paragraph</p>
+</li>
+<li><p>&lt;/br&gt;换行标签 break row</p>
+</li>
+</ol>
+<h2 id="文本格式化标签"><a href="#文本格式化标签" class="headerlink" title="文本格式化标签"></a>文本格式化标签</h2><ol>
+<li>加粗<strong></strong>或者<b></b></li>
+<li>倾斜<em></em>或者<i></i></li>
+<li>删除线<del></del>或者<s></s></li>
+<li>下划线<ins></ins>或者<u></u></li>
+</ol>
+<h2 id="div和span标签"><a href="#div和span标签" class="headerlink" title="div和span标签"></a>div和span标签</h2><ol>
+<li><p>没有语义，只是一个盒子，用来装内容的</p>
+</li>
+<li><p>division表示分割 分区 span表示跨度 跨距</p>
+</li>
+<li><p><div>标签用来布局，但是现在一行只能放一个div大盒子</p>
+</li>
+<li><p><span>标签用来布局，一行上面可以放多个span小盒子</p>
+</li>
+</ol>
+<h2 id="图像标签和路径"><a href="#图像标签和路径" class="headerlink" title="图像标签和路径"></a>图像标签和路径</h2><ul>
+<li>图像标签</li>
+</ul>
+<ol>
+<li><p><img>标签用于定义HTML页面中的图像:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;url&quot;</span>/&gt;</span> </span><br><span class="line">其中src是img标签的必须属性，他用于指定图像文件路径和文件名</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>图像标签的其他属性</p>
+<p>| 属性   | 含义     | 描述                                  |<br>| ——— | ———— | ——————————————————- |<br>| src    | 图片路径 | 必须属性                              |<br>| alt    | 文本     | 替换文本，当图像不能显示时 用文本代替 |<br>| title  | 文本     | 提示文本 鼠标放到上面时显示的文字     |<br>| width  | 像素     | 设置图像的宽度                        |<br>| height | 像素     | 设置图像的高度                        |<br>| border | 像素     | 设置图片的边框粗细                    |</p>
+</li>
+</ol>
+<ol>
+<li>图像标签的路径<ul>
+<li>相对路径 文件夹下地址</li>
+<li>绝对路径 绝对地址 带盘符 在default browser里面打开才能显示</li>
+</ul>
+</li>
+</ol>
+<h2 id="超链接标签"><a href="#超链接标签" class="headerlink" title="超链接标签"></a>超链接标签</h2><ul>
+<li><p><a>标签用于定义超链接，从一个页面链接跳转到另一个</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;跳转目标&quot;</span> <span class="attr">target</span>=<span class="string">&quot;目标窗口的弹出方式&quot;</span>&gt;</span>文本或图像<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>超链接标签的属性</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">anchor 锚</span><br><span class="line">href 用于指定链接目标url地址</span><br><span class="line">target 用于指定页面的打开方式</span><br><span class="line">      self 为默认值</span><br><span class="line">      blank 为在新窗口中打开</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>链接的分类</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">外部链接</span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span> = <span class="string">&quot;http://www.baidu.com&quot;</span>&gt;</span>百度<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">内部链接</span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span> = <span class="string">&quot;index.html&quot;</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">空链接</span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span> = <span class="string">&quot;#&quot;</span>&gt;</span>公司地址<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">下载链接</span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;img.zip&quot;</span>&gt;</span>下载文件<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">网页元素链接</span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>  = <span class="string">&quot;http://www.baidu.com&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span> = <span class="string">&quot;img.jpg&quot;</span>/&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">定位到某个位置</span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span> = <span class="string">&quot;#two&quot;</span>&gt;</span>第二集<span class="tag">&lt;/<span class="name">a</span>&gt;</span> 或者 <span class="tag">&lt;<span class="name">h3</span> <span class="attr">id</span>=<span class="string">&quot;two&quot;</span>&gt;</span>第二集介绍<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="表格标签"><a href="#表格标签" class="headerlink" title="表格标签"></a>表格标签</h2><ul>
+<li><p>总览</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span><span class="tag">&lt;/<span class="name">table</span>&gt;</span>用于定义表格</span><br><span class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span>用于定义表格中的行，必须嵌套在<span class="tag">&lt;<span class="name">table</span>&gt;</span><span class="tag">&lt;/<span class="name">table</span>&gt;</span>中</span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span>用于定义表格中的单元格 必须嵌套在<span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span>中</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>表头单元格标签 <th></th></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">表格属性                    align(left,right,center)规定表格相对周围元素的对齐方式</span><br><span class="line">border(1 or &quot;&quot;)规定表格是否拥有边框</span><br><span class="line">cellpadding(像素值)规定单元边沿预期内容之间的空白，默认1像素</span><br><span class="line">cellspacing(像素值)规定单元格之间的空白，默认2像素</span><br><span class="line">width(像素 or 百分比)规定表格的宽度</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>表格结构标签</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">thead</span>&gt;</span>标签控制表格的头部区域</span><br><span class="line"><span class="tag">&lt;<span class="name">thbody</span>&gt;</span>标签控制表格的主体区域</span><br><span class="line">作用:更好的分清楚结构</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>合并单元格</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">跨行合并：rowspan = &quot;合并单元格的个数&quot;</span><br><span class="line">跨列合并：colspan = &quot;合并单元格的个数&quot;</span><br><span class="line">记得删除多余的单元格</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="列表标签"><a href="#列表标签" class="headerlink" title="列表标签"></a>列表标签</h2><ul>
+<li><p>无序列表</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span>标签下面嵌套<span class="tag">&lt;<span class="name">li</span>&gt;</span>标签</span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span>标签不能嵌入其他无关标签</span><br><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span>里面可以放任何标签</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>有序列表</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span>标签</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>自定义列表</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span>标签，与<span class="tag">&lt;<span class="name">dt</span>&gt;</span>(定义项目 or 名字)和<span class="tag">&lt;<span class="name">dd</span>&gt;</span>(描述每一个项目 or 名字)一起使用</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="表单标签"><a href="#表单标签" class="headerlink" title="表单标签"></a>表单标签</h2><ul>
+<li><p>表单由表单域，表单控件（元素）和提示信息三个部分构成</p>
+</li>
+<li><p>表单域 <form></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">action = &quot;url&quot;用于指定接收并处理表单数据的服务器程序的url地址</span><br><span class="line">method = &quot;get/post&quot;用于设置表单的提交方式</span><br><span class="line">name = &quot;表单域名称&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>表单控件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">input</span>&gt;</span></span><br><span class="line">type = &quot;属性值&quot;</span><br><span class="line">单标签</span><br><span class="line">其他属性：</span><br><span class="line">name 自定义 定义input元素名称</span><br><span class="line">value 自定义 定义input元素的值</span><br><span class="line">checked checked 规定此元素首次加载时应当被选用</span><br><span class="line">maxlength 正整数 规定输入字段字符的最大长度</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">用于绑定一个表单元素 当点击label标签中的文本时，浏览器会自动将焦点转到对应元素上</span><br><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;sex&quot;</span>&gt;</span>男<span class="tag">&lt;/<span class="name">label</span>&gt;</span>,记得加id</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span>&gt;</span></span><br><span class="line">定义下拉列表</span><br><span class="line">格式为<span class="tag">&lt;<span class="name">select</span>&gt;</span><span class="tag">&lt;<span class="name">option</span>&gt;</span>选项<span class="tag">&lt;/<span class="name">option</span>&gt;</span><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">可以在option里面加selected 表示当前项为默认选中项</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Zlinni</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://zlinni.github.io/posts/2475189015/">https://zlinni.github.io/posts/2475189015/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://zlinni.github.io" target="_blank">鱼与前端🐟</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF/">前端</a><a class="post-meta__tags" href="/tags/HTML/">HTML</a></div><div class="post_share"><div class="social-share" data-image="/./img/%E5%9F%BA%E7%A1%80%E7%B3%BB%E5%88%97/html.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/252205597/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/%E5%9F%BA%E7%A1%80%E7%B3%BB%E5%88%97/mysql%E5%85%A5%E9%97%A8.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">MySql入门教程</div></div></a></div><div class="next-post pull-right"><a href="/posts/347129926/"><img class="next-cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/%E5%9F%BA%E7%A1%80%E7%B3%BB%E5%88%97/css.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">CSS入门教程</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/44742292888/" title="基于CASL的前端权限管理方案"><img class="cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/%E5%B7%A5%E7%A8%8B%E5%8C%96%E7%B3%BB%E5%88%97/%E5%9F%BA%E4%BA%8ECASL%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E6%96%B9%E6%A1%88.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-05</div><div class="title">基于CASL的前端权限管理方案</div></div></a></div><div><a href="/posts/3034349472/" title="Mock封装与实操"><img class="cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/Mock%E5%B0%81%E8%A3%85%E4%B8%8E%E5%AE%9E%E6%93%8D.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-12</div><div class="title">Mock封装与实操</div></div></a></div><div><a href="/posts/96411472/" title="microapp微前端实践"><img class="cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/microapp%E5%BE%AE%E5%89%8D%E7%AB%AF%E5%AE%9E%E8%B7%B5.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-11</div><div class="title">microapp微前端实践</div></div></a></div><div><a href="/posts/394001834/" title="docker学习笔记"><img class="cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/Docker%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-19</div><div class="title">docker学习笔记</div></div></a></div><div><a href="/posts/447422923/" title="npm发布前端工具库"><img class="cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/npm%E5%8F%91%E5%B8%83%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7%E5%BA%93.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-19</div><div class="title">npm发布前端工具库</div></div></a></div><div><a href="/posts/2976841894/" title="jest单元测试学习"><img class="cover" src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/jest%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E5%AD%A6%E4%B9%A0.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-19</div><div class="title">jest单元测试学习</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/img/head/waku.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Zlinni</div><div class="author-info__description">就像新年的清晨换上新内裤一样清爽~~</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">103</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">38</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div></div><a class="button--animated" id="card-info-btn" href="JavaScript:join_favorite('https://zlinni.github.io/','zlinni'+'\''+'s blog for study');"><i class="fa fa-star"></i><span>收藏本博客</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/zlinni" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:984328216@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/959f01bf0881d767a936f6846424fd7.jpg" target="_blank" title="WeChat"><i class="fab fa-weixin"></i></a><a class="social-icon" href="https://cdn.jsdelivr.net/gh/Zlinni/Pic/img/f25ad3d4388a03078ea5671f024de65.jpg" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">Typora已弃，转VScode。This is my Blog 如果你有什么问题 请在评论区讨论或私信984328216@qq.com</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E8%BF%9E%E6%8E%A5"><span class="toc-number">2.</span> <span class="toc-text">文件连接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%B5%8F%E8%A7%88%E5%99%A8"><span class="toc-number">3.</span> <span class="toc-text">常用浏览器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Web%E6%A0%87%E5%87%86"><span class="toc-number">4.</span> <span class="toc-text">Web标准</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE"><span class="toc-number">5.</span> <span class="toc-text">HTML常用标签</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E8%A7%84%E8%8C%83"><span class="toc-number">5.1.</span> <span class="toc-text">语法规范</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84%E6%A0%87%E7%AD%BE"><span class="toc-number">5.2.</span> <span class="toc-text">基本结构标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E9%A1%B5%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7"><span class="toc-number">5.3.</span> <span class="toc-text">网页开发工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE"><span class="toc-number">5.4.</span> <span class="toc-text">常用标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%87%E9%A2%98%E6%A0%87%E7%AD%BE"><span class="toc-number">5.5.</span> <span class="toc-text">标题标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AE%B5%E8%90%BD%E5%92%8C%E6%8D%A2%E8%A1%8C%E6%A0%87%E7%AD%BE"><span class="toc-number">5.6.</span> <span class="toc-text">段落和换行标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%A0%87%E7%AD%BE"><span class="toc-number">5.7.</span> <span class="toc-text">文本格式化标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#div%E5%92%8Cspan%E6%A0%87%E7%AD%BE"><span class="toc-number">5.8.</span> <span class="toc-text">div和span标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E6%A0%87%E7%AD%BE%E5%92%8C%E8%B7%AF%E5%BE%84"><span class="toc-number">5.9.</span> <span class="toc-text">图像标签和路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B6%85%E9%93%BE%E6%8E%A5%E6%A0%87%E7%AD%BE"><span class="toc-number">5.10.</span> <span class="toc-text">超链接标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E6%A0%BC%E6%A0%87%E7%AD%BE"><span class="toc-number">5.11.</span> <span class="toc-text">表格标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E6%A0%87%E7%AD%BE"><span class="toc-number">5.12.</span> <span class="toc-text">列表标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E6%A0%87%E7%AD%BE"><span class="toc-number">5.13.</span> <span class="toc-text">表单标签</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/44742292888/" title="基于CASL的前端权限管理方案"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/%E5%B7%A5%E7%A8%8B%E5%8C%96%E7%B3%BB%E5%88%97/%E5%9F%BA%E4%BA%8ECASL%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E6%96%B9%E6%A1%88.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="基于CASL的前端权限管理方案"/></a><div class="content"><a class="title" href="/posts/44742292888/" title="基于CASL的前端权限管理方案">基于CASL的前端权限管理方案</a><time datetime="2024-01-05T03:51:55.000Z" title="发表于 2024-01-05 11:51:55">2024-01-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/3034349472/" title="Mock封装与实操"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/Mock%E5%B0%81%E8%A3%85%E4%B8%8E%E5%AE%9E%E6%93%8D.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Mock封装与实操"/></a><div class="content"><a class="title" href="/posts/3034349472/" title="Mock封装与实操">Mock封装与实操</a><time datetime="2023-03-11T16:00:00.000Z" title="发表于 2023-03-12 00:00:00">2023-03-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/1946841451/" title="记录一次histroy模式的vue项目部署到githubpage"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/vue%E7%B3%BB%E5%88%97/histroy%E6%A8%A1%E5%BC%8Fvue%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%88%B0githubpage.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="记录一次histroy模式的vue项目部署到githubpage"/></a><div class="content"><a class="title" href="/posts/1946841451/" title="记录一次histroy模式的vue项目部署到githubpage">记录一次histroy模式的vue项目部署到githubpage</a><time datetime="2023-03-11T12:19:53.000Z" title="发表于 2023-03-11 20:19:53">2023-03-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/96411472/" title="microapp微前端实践"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6/microapp%E5%BE%AE%E5%89%8D%E7%AB%AF%E5%AE%9E%E8%B7%B5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="microapp微前端实践"/></a><div class="content"><a class="title" href="/posts/96411472/" title="microapp微前端实践">microapp微前端实践</a><time datetime="2023-03-11T12:19:53.000Z" title="发表于 2023-03-11 20:19:53">2023-03-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/1435485109/" title="利用h函数编写组件"><img src= "data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="/./img/vue%E7%B3%BB%E5%88%97/%E5%88%A9%E7%94%A8h%E5%87%BD%E6%95%B0%E7%BC%96%E5%86%99%E7%BB%84%E4%BB%B6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="利用h函数编写组件"/></a><div class="content"><a class="title" href="/posts/1435485109/" title="利用h函数编写组件">利用h函数编写组件</a><time datetime="2023-02-09T15:23:14.000Z" title="发表于 2023-02-09 23:23:14">2023-02-09</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By Zlinni</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'yPV76XNhFIiEQs8P2sM5otbm-MdYXbMMI',
+      appKey: 'BEA2efs1n5lnxkb5cjYQ0xC8',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script data-pjax src="/js/collection.js"></script><script data-pjax src="/js/addele.js"></script><script data-pjax src="/js/eve.js"></script><script data-pjax src="/js/addnodestory.js"></script><script defer src="/live2d-widget/autoload.js"></script><script src="/js/pwanewdir.js"></script><script defer src="https://cdn.jsdelivr.net/gh/graingert/wow@1.3.0/dist/wow.min.js"></script><script defer data-pjax src="/js/fadeIn.js"></script><script defer data-pjax  src="/js/jljy.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"]):not([href="/messageboard/"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+  window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

@@ -1,0 +1,21 @@
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body{
+    left: -66px !important
+}
+.aplayer-body:hover{
+    left: 0px !important
+}
+
+.aplayer.aplayer-fixed .aplayer-lrc {
+    display: block;
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: 0;
+    z-index: 98;
+    pointer-events: none;
+    text-shadow: -1px -1px 0 #fff;  
+}
+.aplayer .aplayer-lrc p {
+color: #0ff5ff !important;
+}
